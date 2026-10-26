@@ -5,8 +5,15 @@ power-ups and five fully integrated game modes.
 
 ## GitHub publication — 26 October 2026
 
-Source and GitHub Pages publication are being prepared for
-[the dedicated repository](https://github.com/Dheeraj-Baghel/brick-ball-breaker).
+**[Play Brick & Ball](https://dheeraj-baghel.github.io/brick-ball-breaker/)**
+is live on GitHub Pages, with source in
+[the dedicated public repository](https://github.com/Dheeraj-Baghel/brick-ball-breaker).
+Clean-clone installation/build and **83 unit tests, 13 local production browser
+checks and 9 live-site Chromium checks pass**. Every one of the 19 hosted application
+files matches the production build byte-for-byte; desktop/mobile renders inspected.
+No gameplay changes were made for publication. Physical devices, other browsers,
+human audio quality and assistive-technology review remain manual.
+
 See [deployment and safe updates](DEPLOYMENT.md). Use Node.js 24 for builds;
 `npm ci && npm run verify` runs the unit gate and creates the static build.
 `npm run deploy:pages` explicitly publishes verified output to the Pages branch;
