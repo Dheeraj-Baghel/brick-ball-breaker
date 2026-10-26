@@ -1,0 +1,40 @@
+{
+  "builtAt": "2026-10-26T05:02:48.611Z",
+  "files": 19,
+  "totalBytes": 125930,
+  "totalKB": 123,
+  "largest": [
+    {
+      "file": "src/styles.css",
+      "bytes": 22696
+    },
+    {
+      "file": "src/main.js",
+      "bytes": 18497
+    },
+    {
+      "file": "src/render.js",
+      "bytes": 11104
+    },
+    {
+      "file": "index.html",
+      "bytes": 8792
+    },
+    {
+      "file": "src/powerups.js",
+      "bytes": 8584
+    },
+    {
+      "file": "src/audio.js",
+      "bytes": 7547
+    },
+    {
+      "file": "src/storage.js",
+      "bytes": 6912
+    },
+    {
+      "file": "src/levels.js",
+      "bytes": 6410
+    }
+  ]
+}
