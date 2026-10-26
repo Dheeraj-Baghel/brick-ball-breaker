@@ -1,0 +1,9 @@
+import {chromium} from '../../chess-game-analyzer/node_modules/playwright/index.mjs';
+import AxeBuilder from '../../chess-game-analyzer/node_modules/@axe-core/playwright/dist/index.mjs';
+import {writeFile} from 'node:fs/promises';
+const browser=await chromium.launch({headless:true});const context=await browser.newContext({viewport:{width:1280,height:900}});const page=await context.newPage();const reports=[];
+async function scan(name){await page.waitForTimeout(300);const result=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa']).analyze();reports.push({name,violations:result.violations.map(v=>({id:v.id,impact:v.impact,description:v.description,nodes:v.nodes.map(n=>({target:n.target,summary:n.failureSummary}))}))});}
+await page.goto('http://127.0.0.1:4328');await page.locator('.mode-card').first().waitFor();await scan('home');await page.locator('[data-mode=campaign]').click();await scan('campaign');await page.locator('#back-modes').click();await page.locator('[data-mode=challenge]').click();await scan('challenges');await page.locator('#back-challenges').click();await page.locator('#open-rewards').click();await scan('collection');
+await page.goto('http://127.0.0.1:4328/?test');await page.waitForFunction(()=>window.gameTest);await scan('aiming');await page.keyboard.press('Space');await page.evaluate(()=>{for(const id of ['wide','slow','barrier','score','multi','laser','magnet','sticky','fireball'])gameTest.activate(id);});await scan('active-abilities');await page.keyboard.press('p');await scan('pause');
+await page.setViewportSize({width:390,height:844});await scan('mobile-pause');await page.evaluate(()=>gameTest.set({phase:'complete'}));await scan('mobile-completion');
+await writeFile('artifacts/testing/redesign-after/accessibility.json',JSON.stringify(reports,null,2));console.log(JSON.stringify(reports.filter(r=>r.violations.length),null,2));await browser.close();if(reports.some(r=>r.violations.length))process.exitCode=1;

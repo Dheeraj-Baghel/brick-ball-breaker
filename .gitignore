@@ -1,0 +1,19 @@
+# Build output
+dist/
+
+# Dependencies (the game itself has none)
+node_modules/
+
+# OS / editor noise
+.DS_Store
+*.swp
+
+# Local verification captures and source backups (not published)
+artifacts/
+
+# Credentials and local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key

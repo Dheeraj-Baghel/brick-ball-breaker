@@ -1,0 +1,13 @@
+{
+  "checkpoint": "10 Audio, animation refinement and performance",
+  "externalAssets": [],
+  "assets": [
+    {"path":"assets/arcade-study.svg","source":"Original workspace artwork","author":"Designer assistant for this project","license":"Original project asset; no third-party content","purpose":"Menu still-life illustration of enamel bricks, ceramic ball and paddle"},
+    {"path":"src/art.js","source":"Original SVG path and Canvas vector construction","author":"Designer assistant for this project","license":"Original project asset; no third-party content","purpose":"Ability/mode icons, palette, motion tokens, reduced-effects flag and DOM pulse helper"},
+    {"path":"src/render.js","source":"Original procedural Canvas material drawings","author":"Designer assistant for this project","license":"Original project asset; no third-party content","purpose":"Cached grain, brick materials, ceramic ball, paddle, pooled particles and state-derived callouts"},
+    {"path":"src/audio.js","source":"Original procedural Web Audio synthesis (oscillators, filtered noise, scheduled pad)","author":"Designer assistant for this project","license":"Original project asset; no third-party content","purpose":"25 sound-effect cues and a quiet ambient music pad; no sample files"}
+  ],
+  "audioSamples": [],
+  "fonts": {"source":"Local system fonts only","families":["Georgia","Times New Roman","Arial","Helvetica","monospace"],"downloads":false},
+  "notes":"Kenney/OpenGameArt audio was considered but not downloaded: procedural synthesis matched the restrained palette, needs no licence tracking and adds zero bytes of assets. No external art, audio, fonts, icon packages, hotlinks or dependencies. Power-up definitions, rarity weights, durations and gameplay sources are unchanged."
+}

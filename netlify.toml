@@ -1,0 +1,17 @@
+# Static deployment: no build dependencies, output is plain files in dist/.
+[build]
+  command = "node scripts/build.mjs"
+  publish = "dist"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "no-referrer"
+    X-Frame-Options = "SAMEORIGIN"
+
+# Hashed-content assets are not used, so keep HTML revalidating and assets short-lived.
+[[headers]]
+  for = "/index.html"
+  [headers.values]
+    Cache-Control = "no-cache"

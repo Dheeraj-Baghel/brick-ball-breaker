@@ -1,0 +1,22 @@
+{
+  "name": "brick-ball-breaker",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A warm, tactile browser arcade game. Dependency-free static ES modules.",
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "python3 -m http.server 4328 --bind 127.0.0.1",
+    "build": "node scripts/build.mjs",
+    "preview": "python3 -m http.server 4330 --bind 127.0.0.1 --directory dist",
+    "test": "node --test tests/*.test.js",
+    "test:browser": "node tests/checkpoint12.mjs && node tests/checkpoint11.mjs && node tests/checkpoint10.mjs",
+    "verify": "npm run test && npm run build",
+    "deploy:pages": "npm run verify && node scripts/deploy-pages.mjs"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
